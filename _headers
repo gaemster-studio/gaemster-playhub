@@ -1,32 +1,18 @@
-/jacecafe/Build/*.wasm.br
-  Content-Type: application/wasm
-  Content-Encoding: br
-  Cache-Control: public, max-age=31536000, immutable
-
-/jacecafe/Build/*.data.br
+/jacecafe/Build/*.data
   Content-Type: application/octet-stream
   Content-Encoding: br
   Cache-Control: public, max-age=31536000, immutable
 
-/jacecafe/Build/*.js.br
-  Content-Type: application/javascript
+/jacecafe/Build/*.wasm
+  Content-Type: application/wasm
   Content-Encoding: br
   Cache-Control: public, max-age=31536000, immutable
 
-/jacecafe/Build/*.wasm.gz
-  Content-Type: application/wasm
-  Content-Encoding: gzip
-  Cache-Control: public, max-age=31536000, immutable
-
-/jacecafe/Build/*.data.gz
-  Content-Type: application/octet-stream
-  Content-Encoding: gzip
-  Cache-Control: public, max-age=31536000, immutable
-
-/jacecafe/Build/*.js.gz
+/jacecafe/Build/*.js
   Content-Type: application/javascript
-  Content-Encoding: gzip
+  Content-Encoding: br
   Cache-Control: public, max-age=31536000, immutable
 
 /* 
-  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
