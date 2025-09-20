@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gaemster – Play Hub</title>
+  <meta name="description" content="Play Gaemster WebGL games in your browser. Jace Café is available now, Fruit Blast Mania II coming soon." />
+  <meta property="og:title" content="Gaemster – Play Hub" />
+  <meta property="og:description" content="Play Gaemster WebGL games in your browser." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-gaemster.jpg" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="/assets/favicon.png" />
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#0f172a; --soft:#141b2f; --text:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif; background:linear-gradient(180deg,var(--bg),#010409); color:var(--text);}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 16px 80px}
+    header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:28px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{width:40px; height:40px; border-radius:12px; box-shadow:0 8px 20px rgba(34,211,238,.25)}
+    .brand h1{font-size:clamp(20px,2.4vw,28px); margin:0; letter-spacing:.2px}
+    .muted{color:var(--muted)}
+    .cards{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    @media (max-width:720px){.cards{grid-template-columns:repeat(6,1fr)}}
+    .card{grid-column:span 6; background:linear-gradient(180deg,var(--panel),var(--soft)); border:1px solid rgba(255,255,255,.06); border-radius:20px; overflow:hidden; box-shadow:0 20px 40px rgba(2,6,23,.45); transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-2px); box-shadow:0 26px 54px rgba(2,6,23,.55)}
+    .thumb{position:relative; aspect-ratio:16/9; background:#0b1222; overflow:hidden}
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block; filter:brightness(.7)}
+    .badge{position:absolute; top:10px; left:10px; background:rgba(15,23,42,.75); padding:6px 10px; border-radius:999px; font-size:12px; border:1px solid rgba(255,255,255,.08)}
+    .comingsoon .thumb img{filter:grayscale(1) brightness(.4)}
+    .comingsoon h3,.comingsoon .muted{opacity:.6}
+    .content{padding:16px 16px 18px}
+    h3{margin:0 0 6px; font-size:clamp(16px,2vw,20px)}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin:8px 0 14px}
+    .tag{font-size:12px; color:var(--muted); border:1px solid rgba(255,255,255,.08); padding:6px 8px; border-radius:999px}
+    .row{display:flex; gap:12px; align-items:center; justify-content:space-between}
+    .btn{appearance:none; border:none; border-radius:12px; padding:10px 14px; font-weight:600; cursor:pointer; background:linear-gradient(90deg,#22d3ee,#38bdf8); color:#031221; box-shadow:0 10px 26px rgba(34,211,238,.35)}
+    .btn:hover{filter:saturate(1.06)}
+    .ghost{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.12)}
+    footer{margin-top:40px; color:var(--muted); font-size:14px; text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <img src="/assets/gaemster-logo.png" alt="Gaemster logo"/>
+        <div>
+          <h1>Gaemster • Play Hub</h1>
+          <div class="muted">WebGL games – play instantly in your browser</div>
+        </div>
+      </div>
+    </header>
+
+    <section class="cards" id="cards">
+
+      <!-- CARD: Jace Café -->
+      <article class="card" data-title="Jace Cafe" data-tags="cafe time-management sim casual">
+        <div class="thumb">
+          <img src="/assets/jacecafe-thumb.jpg" alt="Jace Café game thumbnail" />
+          <span class="badge">Play Now</span>
+        </div>
+        <div class="content">
+          <h3>Jace Café</h3>
+          <div class="muted">Serve, upgrade, and beat the rush in this cozy time‑management sim.</div>
+          <div class="tags">
+            <span class="tag">Time‑Management</span>
+            <span class="tag">Casual</span>
+            <span class="tag">WebGL</span>
+          </div>
+          <div class="row">
+            <a class="btn" href="/jacecafe/" rel="noopener" aria-label="Play Jace Café">Play</a>
+            <a class="btn ghost" href="/jacecafe/" rel="noopener">Open in new tab</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD: Fruit Blast Mania II (Coming Soon) -->
+      <article class="card comingsoon" data-title="Fruit Blast Mania II" data-tags="match-3 puzzle casual fruit">
+        <div class="thumb">
+          <img src="/assets/fbm2-thumb.jpg" alt="Fruit Blast Mania II coming soon" />
+          <span class="badge">Coming Soon</span>
+        </div>
+        <div class="content">
+          <h3>Fruit Blast Mania II</h3>
+          <div class="muted">This juicy match‑3 adventure is almost ready. Stay tuned!</div>
+          <div class="tags">
+            <span class="tag">Match‑3</span>
+            <span class="tag">Puzzle</span>
+            <span class="tag">WebGL</span>
+          </div>
+          <div class="row">
+            <button class="btn ghost" disabled>Unavailable</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer>
+      © <span id="year"></span> Gaemster Game Studio • New games monthly • <a class="muted" href="https://gaemster.com" rel="noopener">gaemster.com</a>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
