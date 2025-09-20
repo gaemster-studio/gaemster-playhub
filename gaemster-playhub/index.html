@@ -4,94 +4,86 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gaemster Play Hub</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/gaemster-logo.png" type="image/png">
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #1c1c1c;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      background: #f4f4f4;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-height: 100vh;
     }
     header {
-      padding: 20px;
+      background: #222;
+      color: white;
+      width: 100%;
       text-align: center;
+      padding: 20px;
     }
-    header img {
-      max-width: 180px;
+    .logo {
+      height: 60px;
     }
-    h1 {
-      font-size: 2rem;
-      margin-top: 10px;
-    }
-    .grid {
+    .games-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
+      margin: 30px;
       width: 90%;
       max-width: 1000px;
-      margin: 30px auto;
     }
-    .card {
-      background: #2a2a2a;
+    .game-card {
+      background: white;
       border-radius: 10px;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
       text-align: center;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease-in-out;
     }
-    .card:hover {
-      transform: translateY(-5px);
+    .game-card:hover {
+      transform: scale(1.03);
     }
-    .card img {
+    .game-card img {
       width: 100%;
-      display: block;
+      height: 180px;
+      object-fit: cover;
     }
-    .card h2 {
+    .game-card h3 {
       margin: 10px 0;
     }
-    .card a, .card button {
-      display: inline-block;
-      margin: 10px 0 20px;
-      padding: 10px 15px;
-      background: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-    .card button:disabled {
-      background: gray;
-      cursor: not-allowed;
+    footer {
+      margin: 30px 0;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="assets/gaemster-logo.png" alt="Gaemster Logo">
-    <h1>Welcome to the Gaemster Play Hub</h1>
+    <img src="assets/gaemster-logo.png" alt="Gaemster Logo" class="logo">
+    <h1>Gaemster Play Hub</h1>
   </header>
 
-  <section class="grid">
-    <!-- Jace Café Game Card -->
-    <div class="card">
-      <img src="assets/jacecafe-thumb.jpg" alt="Jace Café">
-      <h2>Jace Café</h2>
-      <a href="jacecafe/index.html">Play Now</a>
+  <div class="games-grid">
+    <!-- Jace Café -->
+    <div class="game-card">
+      <a href="jacecafe/index.html">
+        <img src="assets/jacecafe-thumb.jpg" alt="Jace Café">
+        <h3>Jace Café</h3>
+      </a>
     </div>
 
-    <!-- Fruit Blast Mania II Placeholder Card -->
-    <div class="card">
-      <img src="assets/fbm2-thumb.jpg" alt="Fruit Blast Mania II">
-      <h2>Fruit Blast Mania II</h2>
-      <button disabled>Coming Soon</button>
+    <!-- Fruit Blast Mania 2 (Add later) -->
+    <div class="game-card">
+      <a href="fruit-blast-mania-2/index.html">
+        <img src="assets/fbm2-thumb.jpg" alt="Fruit Blast Mania 2">
+        <h3>Fruit Blast Mania II</h3>
+      </a>
     </div>
-  </section>
+  </div>
+
+  <footer>
+    © 2025 Gaemster Game Studio — All Rights Reserved
+  </footer>
 </body>
 </html>
