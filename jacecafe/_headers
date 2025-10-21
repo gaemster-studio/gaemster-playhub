@@ -1,0 +1,15 @@
+/jacecafe/Build/*.data
+  Content-Type: application/octet-stream
+  Cache-Control: public, max-age=31536000, immutable
+
+/jacecafe/Build/*.wasm
+  Content-Type: application/wasm
+  Cache-Control: public, max-age=31536000, immutable
+
+/jacecafe/Build/*.js
+  Content-Type: application/javascript
+  Cache-Control: public, max-age=31536000, immutable
+
+/* 
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
